@@ -22,12 +22,12 @@ const (
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
 
-func check(image string, type int, userID string) string {
+func check(image string, imageType int, userID string) string {
 	// UTC Time
 	var now = time.Now().UTC().Format(iso8601DateFormatNoMS)
 	// Prepare parameters
 	var parameters = map[string]interface{}{
-		"type":  type,
+		"type":   imageType,
 		"image":  image,
 		"userId": userID,
 	}

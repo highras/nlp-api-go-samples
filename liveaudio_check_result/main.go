@@ -16,20 +16,18 @@ import (
 const (
 	projectID             = "YOUR_PROJECT_ID_GOES_HERE"
 	secrectKey            = "YOUR_SECRET_KEY_GOES_HERE"
-	endpointURL           = "https://vsafe.ilivedata.com/api/v1/video/check/submit"
-	endpointHost          = "vsafe.ilivedata.com"
-	endpointPath          = "/api/v1/video/check/submit"
+	endpointURL           = "https://asafe.ilivedata.com/api/v1/liveaudio/check/result"
+	endpointHost          = "asafe.ilivedata.com"
+	endpointPath          = "/api/v1/liveaudio/check/result"
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
 
-func check(videoURL string, videoType int, userID string) string {
+func result(taskID string) string {
 	// UTC Time
 	var now = time.Now().UTC().Format(iso8601DateFormatNoMS)
 	// Prepare parameters
 	var parameters = map[string]interface{}{
-		"type":   videoType,
-		"video":  videoURL,
-		"userId": userID,
+		"taskId": taskID,
 	}
 	var queryBody []byte
 	queryBody, err := json.Marshal(parameters)
@@ -95,6 +93,6 @@ func request(body string, signature string, timeStamp string) string {
 }
 
 func main() {
-	var videoURL = "http://edge.ivideo.sina.com.cn/34463529803.mp4?KID=sina,viask&Expires=1597852800&ssig=6po29lqbTn&reqid="
-	check(videoURL, 1, "12345678")
+	var taskID = "THE_TASK_ID_FROM_SUBMIT_API"
+	result(taskID)
 }

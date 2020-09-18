@@ -22,12 +22,12 @@ const (
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
 
-func result(taskId string) string {
+func result(taskID string) string {
 	// UTC Time
 	var now = time.Now().UTC().Format(iso8601DateFormatNoMS)
 	// Prepare parameters
 	var parameters = map[string]interface{}{
-		"taskId":  taskId,
+		"taskId": taskID,
 	}
 	var queryBody []byte
 	queryBody, err := json.Marshal(parameters)
@@ -93,6 +93,6 @@ func request(body string, signature string, timeStamp string) string {
 }
 
 func main() {
-	var taskId = "THE_TASK_ID_FROM_SUBMIT_API"
-	result(taskId)
+	var taskID = "THE_TASK_ID_FROM_SUBMIT_API"
+	result(taskID)
 }

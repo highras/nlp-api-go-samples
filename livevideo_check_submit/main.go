@@ -16,9 +16,9 @@ import (
 const (
 	projectID             = "YOUR_PROJECT_ID_GOES_HERE"
 	secrectKey            = "YOUR_SECRET_KEY_GOES_HERE"
-	endpointURL           = "https://vsafe.ilivedata.com/api/v1/video/check/submit"
+	endpointURL           = "https://vsafe.ilivedata.com/api/v1/livevideo/check/submit"
 	endpointHost          = "vsafe.ilivedata.com"
-	endpointPath          = "/api/v1/video/check/submit"
+	endpointPath          = "/api/v1/livevideo/check/submit"
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
 
@@ -95,6 +95,6 @@ func request(body string, signature string, timeStamp string) string {
 }
 
 func main() {
-	var videoURL = "http://edge.ivideo.sina.com.cn/34463529803.mp4?KID=sina,viask&Expires=1597852800&ssig=6po29lqbTn&reqid="
+	var videoURL = "LIVE_VIDEO_URL"
 	check(videoURL, 1, "12345678")
 }

@@ -22,14 +22,14 @@ const (
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
 
-func check(audioUrl string, type int, lang string, userID string) string {
+func check(audioURL string, audioType int, lang string, userID string) string {
 	// UTC Time
 	var now = time.Now().UTC().Format(iso8601DateFormatNoMS)
 	// Prepare parameters
 	var parameters = map[string]interface{}{
-		"type":  type,
-		"lang": lang,
-		"audio":  audioUrl,
+		"type":   audioType,
+		"lang":   lang,
+		"audio":  audioURL,
 		"userId": userID,
 	}
 	var queryBody []byte
@@ -96,6 +96,6 @@ func request(body string, signature string, timeStamp string) string {
 }
 
 func main() {
-	var audioUrl = "https://speech-test.s3.cn-northwest-1.amazonaws.com.cn/speech/79b31026-d30a-11ea-aaa9-ac1f6b9346d0.wav"
-	check(audioUrl, 1, "zh-CN", "12345678")
+	var audioURL = "https://speech-test.s3.cn-northwest-1.amazonaws.com.cn/speech/79b31026-d30a-11ea-aaa9-ac1f6b9346d0.wav"
+	check(audioURL, 1, "zh-CN", "12345678")
 }
