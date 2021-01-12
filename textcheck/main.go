@@ -14,10 +14,10 @@ import (
 )
 
 const (
-	projectID             = "YOUR_PROJECT_ID_GOES_HERE"
-	secrectKey            = "YOUR_SECRET_KEY_GOES_HERE"
-	endpointURL           = "https://tsafe.ilivedata.com/api/v1/text/check"
-	endpointHost          = "tsafe.ilivedata.com"
+	projectID             = "1000"                             //"YOUR_PROJECT_ID_GOES_HERE"
+	secrectKey            = "d9e23d93053f49ade2f8fce185acedd4" //"YOUR_SECRET_KEY_GOES_HERE"
+	endpointURL           = "https://tsafe-ali.dawangops.top/api/v1/text/check"
+	endpointHost          = "tsafe-ali.dawangops.top" //"tsafe.ilivedata.com"
 	endpointPath          = "/api/v1/text/check"
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
@@ -27,8 +27,8 @@ func check(text string, userID string) string {
 	var now = time.Now().UTC().Format(iso8601DateFormatNoMS)
 	// Prepare parameters
 	var parameters = map[string]interface{}{
-		"content":  text,
-		"userId": userID,
+		"content": text,
+		"userId":  userID,
 	}
 	var queryBody []byte
 	queryBody, err := json.Marshal(parameters)
@@ -95,5 +95,8 @@ func request(body string, signature string, timeStamp string) string {
 
 func main() {
 	var text = "fuck"
+	start := time.Now()
 	check(text, "12345678")
+	elapsed := time.Since(start)
+	fmt.Println(elapsed)
 }
