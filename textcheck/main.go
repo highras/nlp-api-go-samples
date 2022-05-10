@@ -16,8 +16,8 @@ import (
 const (
 	projectID             = "1000"                             //"YOUR_PROJECT_ID_GOES_HERE"
 	secrectKey            = "d9e23d93053f49ade2f8fce185acedd4" //"YOUR_SECRET_KEY_GOES_HERE"
-	endpointURL           = "https://tsafe-ali.dawangops.top/api/v1/text/check"
-	endpointHost          = "tsafe-ali.dawangops.top" //"tsafe.ilivedata.com"
+	endpointURL           = "https://tsafe.ilivedata.com/api/v1/text/check"
+	endpointHost          = "tsafe.ilivedata.com"
 	endpointPath          = "/api/v1/text/check"
 	iso8601DateFormatNoMS = "2006-01-02T15:04:05Z"
 )
