@@ -21,8 +21,8 @@ const (
 	endpointPath = "/api/v1/speech/synthesis"
 	endpointURL  = "https://tts.ilivedata.com/api/v1/speech/synthesis"
 
-	projectID = "81900001"
-	secretKey = "iV7DP7O7zLh8OicMxnV5pkkGFNTKNxkIr6Y5AKWNRcg="
+	projectID = "YOUR_PROJECT_ID_GOES_HERE"
+	secretKey = "YOUR_SECRET_KEY_GOES_HERE"
 )
 
 func main() {
